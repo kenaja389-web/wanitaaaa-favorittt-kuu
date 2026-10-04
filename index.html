@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Avika ♡</title>
+
+<style>
+
+/* =====================================
+   FONT
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap');
+
+
+/* =====================================
+   DASAR
+===================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    background:#f8f1ed;
+
+    color:#5e4337;
+
+    font-family:"Cormorant Garamond",serif;
+
+    overflow-x:hidden;
+
+}
+
+button{
+
+    font:inherit;
+
+    cursor:pointer;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* =====================================
+   BUNGA JATUH
+===================================== */
+
+.flower-field{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:100;
+
+    overflow:hidden;
+
+}
+
+.flower{
+
+    position:absolute;
+
+    animation:fall linear infinite;
+
+    opacity:.8;
+
+}
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+        translateY(-15vh)
+        rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(115vh)
+        rotate(360deg);
+
+    }
+
+}
+
+
+/* =====================================
+   INTRO
+===================================== */
+
+#intro{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    background:#faf4f1;
+
+}
+
+.paper{
+
+    background:
+    linear-gradient(
+        180deg,
+        #fffdfb,
+        #fff8f5
+    );
+
+    border:1px solid #c8a77e;
+
+    border-radius:6px;
+
+    box-shadow:
+    0 18px 45px
+    rgba(91,55,35,.13);
+
+    position:relative;
+
+}
+
+.intro-card{
+
+    width:min(530px,90vw);
+
+    padding:55px 42px 42px;
+
+    text-align:center;
+
+}
+
+.intro-card .flowers{
+
+    font-size:27px;
+
+    line-height:1.35;
+
+    letter-spacing:15px;
+
+    margin-bottom:8px;
+
+}
+
+.intro-card h1{
+
+    font:600 30px "Great Vibes";
+
+    color:#704027;
+
+    margin:15px 0;
+
+}
+
+.intro-card p{
+
+    font-size:22px;
+
+    margin:0 0 8px;
+
+}
+
+.sticker{
+
+    position:absolute;
+
+    font-size:24px;
+
+}
+
+.s1{
+    top:12px;
+    left:35px;
+}
+
+.s2{
+    top:28px;
+    right:65px;
+}
+
+.s3{
+    top:88px;
+    left:90px;
+}
+
+.s4{
+    top:105px;
+    right:30px;
+}
+
+.s5{
+    bottom:35px;
+    left:45px;
+}
+
+.s6{
+    bottom:25px;
+    right:85px;
+}
+
+.next-btn{
+
+    border:1px solid #a77a4e;
+
+    background:#c89d6b;
+
+    color:white;
+
+    border-radius:6px;
+
+    padding:11px 28px;
+
+    box-shadow:
+    0 4px 9px #7c4e3422;
+
+    transition:.25s;
+
+}
+
+.next-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#b98958;
+
+}
+
+
+/* =====================================
+   LOVE GATE
+===================================== */
+
+#loveGate{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px;
+
+    background:#faf4f1;
+
+}
+
+.gate{
+
+    text-align:center;
+
+}
+
+.gate-title{
+
+    font:
+    600
+    clamp(30px,5vw,44px)
+    "Great Vibes";
+
+    color:#704027;
+
+    margin:0 0 22px;
+
+}
+
+.scroll-icon{
+
+    font-size:48px;
+
+    color:#704027;
+
+}
+
+.gate-btn{
+
+    margin-top:18px;
+
+    padding:13px 35px;
+
+    border-radius:7px;
+
+    border:1px solid #9b6e42;
+
+    background:#d2a873;
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+
+/* =====================================
+   MODAL
+===================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(50,44,42,.47);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:200;
+
+    padding:18px;
+
+}
+
+.modal-card{
+
+    width:min(560px,92vw);
+
+    padding:34px 38px;
+
+    text-align:center;
+
+    border:2px solid #c8a31e;
+
+    border-radius:13px;
+
+    background:#fffaf8;
+
+    box-shadow:
+    0 25px 70px #0003;
+
+    animation:
+    messageIn .45s ease;
+
+}
+
+.message-number{
+
+    color:#b58a5c;
+
+    font-family:Inter,sans-serif;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+    margin-bottom:12px;
+
+}
+
+.modal-card h2{
+
+    margin:0 0 15px;
+
+    font-family:"Great Vibes";
+
+    color:#704027;
+
+    font-size:38px;
+
+}
+
+.modal-card p{
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    margin:0 0 25px;
+
+}
+
+@keyframes messageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(18px)
+        scale(.97);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+
+/* =====================================
+   SECTION
+===================================== */
+
+.section{
+
+    padding:80px 5vw;
+
+    background:#faf3ef;
+
+    position:relative;
+
+}
+
+.section-title{
+
+    width:min(700px,94vw);
+
+    margin:0 auto 36px;
+
+    padding:18px 25px;
+
+    text-align:center;
+
+}
+
+.section-title h2{
+
+    font:
+    600
+    clamp(32px,5vw,49px)
+    "Great Vibes";
+
+    color:#704027;
+
+    margin:0 0 7px;
+
+}
+
+.section-title p{
+
+    font-size:22px;
+
+    margin:0;
+
+}
+
+
+/* =====================================
+   GALERI
+===================================== */
+
+.gallery{
+
+    max-width:1120px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:22px;
+
+}
+
+.photo{
+
+    background:#fffaf7;
+
+    border:1px solid #c8a77e;
+
+    padding:10px 10px 28px;
+
+    box-shadow:
+    0 9px 18px #76503618;
+
+    position:relative;
+
+}
+
+.photo:nth-child(odd){
+
+    transform:rotate(-.5deg);
+
+}
+
+.photo:nth-child(even){
+
+    transform:rotate(.7deg);
+
+}
+
+.photo img{
+
+    display:block;
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+}
+
+.crown{
+
+    position:absolute;
+
+    right:7px;
+
+    top:7px;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:#b17b4d;
+
+    color:white;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:19px;
+
+}
+
+
+/* =====================================
+   TIMELINE
+===================================== */
+
+.timeline-wrap{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    position:relative;
+
+    padding:10px 0 50px;
+
+}
+
+.timeline-line{
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    left:50%;
+
+    width:4px;
+
+    transform:translateX(-50%);
+
+    background:#c69a67;
+
+    border-radius:5px;
+
+}
+
+.event{
+
+    width:44%;
+
+    padding:25px;
+
+    margin:45px 0;
+
+    background:
+    radial-gradient(
+        #eadfd7 1px,
+        transparent 1px
+    )
+    0 0/13px 13px,
+
+    #fffaf7;
+
+    border:1px solid #bd966d;
+
+    box-shadow:
+    0 18px 45px
+    rgba(91,55,35,.13);
+
+    position:relative;
+
+}
+
+.event.left{
+
+    margin-right:auto;
+
+}
+
+.event.right{
+
+    margin-left:auto;
+
+}
+
+.event:before{
+
+    content:"★";
+
+    position:absolute;
+
+    top:50%;
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    background:#c79a67;
+
+    border:5px solid #fffaf7;
+
+    color:#704027;
+
+    display:grid;
+
+    place-items:center;
+
+    transform:translateY(-50%);
+
+}
+
+.event.left:before{
+
+    right:-71px;
+
+}
+
+.event.right:before{
+
+    left:-71px;
+
+}
+
+.event h3{
+
+    font:
+    600 28px
+    "Great Vibes";
+
+    color:#704027;
+
+    margin:0 0 8px;
+
+}
+
+.event time{
+
+    font-size:15px;
+
+    color:#8c6b58;
+
+}
+
+.event p{
+
+    font-size:18px;
+
+    line-height:1.5;
+
+    margin:12px 0 0;
+
+}
+
+
+/* =====================================
+   ALASAN
+===================================== */
+
+.reason-grid{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:22px;
+
+}
+
+.reason{
+
+    padding:26px 18px;
+
+    min-height:310px;
+
+    text-align:center;
+
+    background:
+    radial-gradient(
+        #eadfd7 1px,
+        transparent 1px
+    )
+    0 0/13px 13px,
+
+    #fffaf7;
+
+    border:1px solid #bd966d;
+
+}
+
+.reason .ico{
+
+    width:80px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    background:#d9b991;
+
+    color:white;
+
+    display:grid;
+
+    place-items:center;
+
+    margin:0 auto 15px;
+
+    font-size:25px;
+
+}
+
+.reason h3{
+
+    font:
+    600 27px
+    "Great Vibes";
+
+    color:#704027;
+
+    margin:5px 0 12px;
+
+}
+
+.reason p{
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    margin:0;
+
+}
+
+
+/* =====================================
+   FINAL LETTER
+===================================== */
+
+#final{
+
+    padding:85px 15px;
+
+}
+
+.letter{
+
+    width:min(800px,94vw);
+
+    padding:55px 55px 65px;
+
+    text-align:center;
+
+    background:
+    radial-gradient(
+        #eadfd7 1px,
+        transparent 1px
+    )
+    0 0/13px 13px,
+
+    #fffaf7;
+
+    border:1px solid #bd966d;
+
+}
+
+.letter h2{
+
+    font:
+    600
+    clamp(35px,6vw,56px)
+    "Great Vibes";
+
+    color:#704027;
+
+    margin:0 0 15px;
+
+}
+
+.letter .birthday{
+
+    font-size:25px;
+
+    margin-bottom:28px;
+
+}
+
+.letter p{
+
+    font-size:20px;
+
+    line-height:1.72;
+
+    text-align:center;
+
+    margin:0 0 22px;
+
+}
+
+.signature{
+
+    font:
+    600 28px
+    "Great Vibes";
+
+    color:#704027;
+
+    margin-top:28px;
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:800px){
+
+    .gallery{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:13px;
+
+    }
+
+    .reason-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:13px;
+
+    }
+
+    .timeline-line{
+
+        left:20px;
+
+    }
+
+    .event,
+    .event.left,
+    .event.right{
+
+        width:
+        calc(100% - 58px);
+
+        margin-left:58px;
+
+        margin-right:0;
+
+    }
+
+    .event.left:before,
+    .event.right:before{
+
+        left:-61px;
+
+        right:auto;
+
+    }
+
+    .event h3{
+
+        font-size:25px;
+
+    }
+
+    .event p{
+
+        font-size:16px;
+
+    }
+
+    .section{
+
+        padding:55px 13px;
+
+    }
+
+    .letter{
+
+        padding:38px 22px;
+
+    }
+
+    .letter p{
+
+        font-size:17px;
+
+    }
+
+}
+
+@media(max-width:470px){
+
+    .gallery{
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
+
+    .reason-grid{
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
+
+    .reason{
+
+        min-height:300px;
+
+        padding:22px 12px;
+
+    }
+
+    .reason h3{
+
+        font-size:23px;
+
+    }
+
+    .reason p{
+
+        font-size:15px;
+
+    }
+
+    .intro-card{
+
+        padding:
+        45px 20px 32px;
+
+    }
+
+    .intro-card p{
+
+        font-size:20px;
+
+    }
+
+    .modal-card{
+
+        padding:
+        28px 20px;
+
+    }
+
+    .modal-card p{
+
+        font-size:17px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     BUNGA
+===================================== -->
+
+<div
+    class="flower-field"
+    id="flowers">
+</div>
+
+
+<!-- =====================================
+     MUSIK
+===================================== -->
+
+<audio
+    id="music"
+    src="assets/music.mp3"
+    loop>
+</audio>
+
+
+<!-- =====================================
+     HALAMAN PERTAMA
+===================================== -->
+
+<section id="intro">
+
+    <div class="paper intro-card">
+
+        <span class="sticker s1">🌸</span>
+
+        <span class="sticker s2">🦋</span>
+
+        <span class="sticker s3">🌷</span>
+
+        <span class="sticker s4">🌻</span>
+
+        <span class="sticker s5">💐</span>
+
+        <span class="sticker s6">🌺</span>
+
+
+        <div class="flowers">
+
+            🌷 🦋 🌸 🌻 🌷
+
+            <br>
+
+            💐 🌺 🌸 🦋 💐
+
+        </div>
+
+
+        <h1>
+
+            ciyeee kepo ya,
+            coba di klik
+
+        </h1>
+
+
+        <p>
+
+            Hari spesial untuk
+            orang paling berharga
+            di hidupku 💗
+
+        </p>
+
+
+        <div
+            style="
+            font-size:30px;
+            margin:12px;
+            ">
+
+            💗
+
+        </div>
+
+
+        <button
+            class="next-btn"
+            onclick="showGate()">
+
+            Lanjut ♡
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     HALAMAN LOVE
+===================================== -->
+
+<section
+    id="loveGate"
+    class="hidden">
+
+    <div class="gate">
+
+        <div class="scroll-icon">
+
+            ▰
+
+        </div>
+
+
+        <h1 class="gate-title">
+
+            ciyeee kepo ya,
+            coba di klik
+
+        </h1>
+
+
+        <button
+            class="gate-btn"
+            onclick="openLetter()">
+
+            ♥ &nbsp;
+            Read Love Letters
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     PESAN 1
+===================================== -->
+
+<div
+    class="modal hidden"
+    id="letterModal">
+
+
+    <div
+        class="modal-card"
+        id="message1">
+
+        <div class="message-number">
+
+            💌 Pesan 1 dari 4
+
+        </div>
+
+
+        <h2>
+
+            Untuk Kamu 💗
+
+        </h2>
+
+
+        <p>
+
+            Hari ini adalah hari spesial kamu.
+
+            <br><br>
+
+            Jadi sebelum masuk ke bagian
+            selanjutnya, aku mau bilang sesuatu.
+
+            <br><br>
+
+            Terima kasih sudah hadir dan menjadi
+            salah satu orang yang paling berarti
+            dalam hidup aku.
+
+            <br><br>
+
+            Semoga hari ulang tahun kamu kali ini
+            bisa menjadi hari yang penuh senyum.
+
+        </p>
+
+
+        <button
+            class="next-btn"
+            onclick="nextMessage(2)">
+
+            Lanjut 💗
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         PESAN 2
+    ===================================== -->
+
+    <div
+        class="modal-card hidden"
+        id="message2">
+
+        <div class="message-number">
+
+            💌 Pesan 2 dari 4
+
+        </div>
+
+
+        <h2>
+
+            Tentang Kamu 🌷
+
+        </h2>
+
+
+        <p>
+
+            Aku suka banyak hal tentang kamu.
+
+            <br><br>
+
+            Cara kamu tersenyum,
+            cara kamu bercerita,
+            cara kamu perhatian,
+            bahkan hal-hal kecil yang mungkin
+            menurut kamu biasa saja.
+
+            <br><br>
+
+            Buat aku, semua itu punya arti sendiri.
+
+        </p>
+
+
+        <button
+            class="next-btn"
+            onclick="nextMessage(3)">
+
+            Lanjut 💗
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         PESAN 3
+    ===================================== -->
+
+    <div
+        class="modal-card hidden"
+        id="message3">
+
+        <div class="message-number">
+
+            💌 Pesan 3 dari 4
+
+        </div>
+
+
+        <h2>
+
+            Harapanku Untuk Kamu 🦋
+
+        </h2>
+
+
+        <p>
+
+            Aku berharap di umur kamu yang baru,
+            semua hal baik datang satu per satu.
+
+            <br><br>
+
+            Semoga kamu selalu sehat,
+            selalu bahagia,
+            dimudahkan dalam semua urusan,
+            dan bisa mencapai semua hal
+            yang selama ini kamu impikan.
+
+            <br><br>
+
+            Jangan pernah berhenti mengejar
+            apa yang kamu inginkan.
+
+        </p>
+
+
+        <button
+            class="next-btn"
+            onclick="nextMessage(4)">
+
+            Lanjut 💗
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         PESAN 4
+    ===================================== -->
+
+    <div
+        class="modal-card hidden"
+        id="message4">
+
+        <div class="message-number">
+
+            💌 Pesan 4 dari 4
+
+        </div>
+
+
+        <h2>
+
+            Happy Birthday 🎂💜
+
+        </h2>
+
+
+        <p>
+
+            Sekali lagi,
+
+            <br><br>
+
+            <b>
+                Happy Birthday, Avika.
+            </b>
+
+            <br><br>
+
+            Semoga semua doa yang kamu panjatkan
+            hari ini bisa terkabul satu per satu.
+
+            <br><br>
+
+            Terima kasih sudah menjadi seseorang
+            yang begitu berarti.
+
+            <br><br>
+
+            Tetap jadi Avika yang aku kenal,
+            tetap tersenyum,
+            dan jangan pernah lupa kalau kamu
+            sangat berharga. 💗
+
+            <br><br>
+
+            Semoga kita masih punya banyak cerita
+            indah untuk dibuat bersama.
+
+        </p>
+
+
+        <button
+            class="next-btn"
+            onclick="finishMessages()">
+
+            Selesai 💗
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     CERITA & FOTO
+===================================== -->
+
+<section
+    class="section hidden"
+    id="story">
+
+
+    <div
+        class="section-title paper">
+
+        <h2>
+
+            📷 Cerita Kita
+
+        </h2>
+
+
+        <p>
+
+            Walau cuma lewat layar,
+            tapi semua momen ini tetap
+            berharga banget.
+
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div class="photo">
+
+            <span class="crown">
+                ♛
+            </span>
+
+            <img src="assets/photo1.jpg">
+
+        </div>
+
+
+        <div class="photo">
+
+            <span class="crown">
+                ♛
+            </span>
+
+            <img src="assets/photo2.jpg">
+
+        </div>
+
+
+        <div class="photo">
+
+            <span class="crown">
+                ♛
+            </span>
+
+            <img src="assets/photo3.jpg">
+
+        </div>
+
+
+        <div class="photo">
+
+            <span class="crown">
+                ♛
+            </span>
+
+            <img src="assets/photo4.jpg">
+
+        </div>
+
+
+        <div class="photo">
+
+            <span class="crown">
+                ♛
+            </span>
+
+            <img src="assets/photo5.jpg">
+
+        </div>
+
+
+        <div class="photo">
+
+            <span class="crown">
+                ♛
+            </span>
+
+            <img src="assets/photo6.jpg">
+
+        </div>
+
+
+        <div class="photo">
+
+            <span class="crown">
+                ♛
+            </span>
+
+            <img src="assets/photo7.jpg">
+
+        </div>
+
+
+        <div class="photo">
+
+            <span class="crown">
+                ♛
+            </span>
+
+            <img src="assets/photo8.jpg">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     RENCANA
+===================================== -->
+
+<section
+    class="section hidden"
+    id="plans">
+
+
+    <div class="timeline-wrap">
+
+        <div class="timeline-line">
+        </div>
+
+
+        <article class="event left">
+
+            <h3>
+                Jalan-Jalan ke Kebun Binatang Surabaya
+            </h3>
+
+            <time>
+                30 Aug 2026
+            </time>
+
+            <p>
+
+                Keliling KBS sambil lihat hewan-hewan
+                lucu, jalan santai berdua, beli jajanan,
+                terus foto-foto di setiap spot yang kita suka.
+
+            </p>
+
+        </article>
+
+
+        <article class="event right">
+
+            <h3>
+                Liburan ke Hawai Waterpark Malang
+            </h3>
+
+            <time>
+                20 Sep 2026
+            </time>
+
+            <p>
+
+                Main air seharian, nyobain semua wahana
+                yang ada, ketawa sampai capek,
+                dan pulang dengan cerita baru.
+
+            </p>
+
+        </article>
+
+
+        <article class="event left">
+
+            <h3>
+                Cafe Hopping
+            </h3>
+
+            <time>
+                08 Nov 2026
+            </time>
+
+            <p>
+
+                Cari cafe yang estetik, nyobain menu
+                yang belum pernah dicoba, ngobrol lama
+                tanpa lihat jam.
+
+            </p>
+
+        </article>
+
+
+        <article class="event right">
+
+            <h3>
+                Rayain Akhir Tahun Bareng
+            </h3>
+
+            <time>
+                24 Dec 2026
+            </time>
+
+            <p>
+
+                Semoga akhir tahun nanti kita masih
+                bisa duduk bareng, cerita tentang semua
+                hal yang sudah kita lewatin.
+
+            </p>
+
+        </article>
+
+
+        <article class="event left">
+
+            <h3>
+                31 Des 2027
+            </h3>
+
+            <time>
+                Harapan kecil
+            </time>
+
+            <p>
+
+                Semoga semua rencana kecil ini bisa
+                kita wujudin bareng, satu per satu.
+
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     8 ALASAN
+===================================== -->
+
+<section
+    class="section hidden"
+    id="reasons">
+
+
+    <div
+        class="section-title paper">
+
+        <h2>
+
+            🎁 8 Alasan Aku Sayang Kamu
+
+        </h2>
+
+        <div
+            style="font-size:30px">
+
+            🎁
+
+        </div>
+
+    </div>
+
+
+    <div class="reason-grid">
+
+
+        <article class="reason">
+
+            <div class="ico">
+                ☺
+            </div>
+
+            <h3>
+                Senyum Kamu 😊
+            </h3>
+
+            <p>
+
+                Senyum kamu selalu punya cara
+                buat bikin hari aku jadi lebih baik.
+
+            </p>
+
+        </article>
+
+
+        <article class="reason">
+
+            <div class="ico">
+                💞
+            </div>
+
+            <h3>
+                Perhatian Kecil
+            </h3>
+
+            <p>
+
+                Hal-hal kecil yang kamu lakukan
+                selalu berarti banget buat aku.
+
+            </p>
+
+        </article>
+
+
+        <article class="reason">
+
+            <div class="ico">
+                ☾
+            </div>
+
+            <h3>
+                Bikin Aku Nyaman
+            </h3>
+
+            <p>
+
+                Sama kamu aku bisa menjadi
+                diri sendiri.
+
+            </p>
+
+        </article>
+
+
+        <article class="reason">
+
+            <div class="ico">
+                ♥
+            </div>
+
+            <h3>
+                Selalu Ada
+            </h3>
+
+            <p>
+
+                Kamu selalu ada ketika aku
+                membutuhkan seseorang.
+
+            </p>
+
+        </article>
+
+
+        <article class="reason">
+
+            <div class="ico">
+                🏆
+            </div>
+
+            <h3>
+                Selalu Mendukung
+            </h3>
+
+            <p>
+
+                Kamu selalu bisa bikin aku
+                semangat lagi.
+
+            </p>
+
+        </article>
+
+
+        <article class="reason">
+
+            <div class="ico">
+                ☺
+            </div>
+
+            <h3>
+                Cara Kamu Bercerita
+            </h3>
+
+            <p>
+
+                Aku suka mendengar semua
+                cerita kamu.
+
+            </p>
+
+        </article>
+
+
+        <article class="reason">
+
+            <div class="ico">
+                ☻
+            </div>
+
+            <h3>
+                Bikin Hari Berwarna
+            </h3>
+
+            <p>
+
+                Kehadiran kamu bikin hidup aku
+                terasa lebih berwarna.
+
+            </p>
+
+        </article>
+
+
+        <article class="reason">
+
+            <div class="ico">
+                ♡
+            </div>
+
+            <h3>
+                Kamu Ya Kamu
+            </h3>
+
+            <p>
+
+                Aku sayang kamu karena kamu
+                adalah diri kamu sendiri.
+
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     SURAT TERAKHIR
+===================================== -->
+
+<section
+    class="section hidden"
+    id="final">
+
+
+    <div class="letter">
+
+
+        <h2>
+
+            🙏 Doa & Harapan
+            Untuk Kamu 🎂💜
+
+        </h2>
+
+
+        <div class="birthday">
+
+            Happy Birthday yaa, sayang. 💜 🥳
+
+        </div>
+
+
+        <p>
+
+            Di hari spesial kamu ini,
+            aku cuma pengen doain semua hal baik
+            buat kamu.
+
+            Semoga di umur yang baru ini kamu selalu
+            dikasih kesehatan, panjang umur,
+            hati yang tenang, dan kebahagiaan
+            yang nggak ada habisnya.
+
+        </p>
+
+
+        <p>
+
+            Semoga setiap langkah yang kamu ambil
+            selalu dipermudah, setiap usaha yang kamu
+            lakuin membuahkan hasil terbaik,
+            dan semua mimpi yang kamu punya
+            pelan-pelan bisa menjadi kenyataan.
+
+        </p>
+
+
+        <p>
+
+            Kalau suatu hari nanti kamu lagi capek,
+            lagi sedih, atau ngerasa semuanya berat,
+            semoga kamu selalu ingat kalau kamu
+            nggak sendirian.
+
+            Ada orang-orang yang sayang sama kamu
+            dan selalu ingin melihat kamu bahagia.
+
+        </p>
+
+
+        <p>
+
+            Terima kasih ya karena sudah hadir
+            di hidup aku dan bikin hari-hari aku
+            jadi lebih berwarna.
+
+        </p>
+
+
+        <p>
+
+            Sekali lagi,
+
+            <b>
+                Happy Birthday, Avika.
+            </b>
+
+            💜
+
+            Semoga semua doa yang kamu aminkan
+            hari ini benar-benar dikabulkan
+            satu per satu.
+
+        </p>
+
+
+        <div class="signature">
+
+            Dengan penuh sayang, ♡
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<script>
+
+
+/* =====================================
+   MUSIK
+===================================== */
+
+const music =
+document.getElementById("music");
+
+
+/* =====================================
+   PINDAH KE HALAMAN LOVE
+===================================== */
+
+function showGate(){
+
+    music.volume = 0.65;
+
+    music.play().catch(()=>{});
+
+
+    document
+    .getElementById("intro")
+    .classList
+    .add("hidden");
+
+
+    document
+    .getElementById("loveGate")
+    .classList
+    .remove("hidden");
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* =====================================
+   BUKA PESAN
+===================================== */
+
+function openLetter(){
+
+    document
+    .getElementById("letterModal")
+    .classList
+    .remove("hidden");
+
+
+    for(
+        let i=1;
+        i<=4;
+        i++
+    ){
+
+        document
+        .getElementById("message"+i)
+        .classList
+        .add("hidden");
+
+    }
+
+
+    document
+    .getElementById("message1")
+    .classList
+    .remove("hidden");
+
+}
+
+
+/* =====================================
+   PESAN BERIKUTNYA
+===================================== */
+
+function nextMessage(number){
+
+    for(
+        let i=1;
+        i<=4;
+        i++
+    ){
+
+        document
+        .getElementById("message"+i)
+        .classList
+        .add("hidden");
+
+    }
+
+
+    document
+    .getElementById("message"+number)
+    .classList
+    .remove("hidden");
+
+}
+
+
+/* =====================================
+   SELESAI 4 PESAN
+===================================== */
+
+function finishMessages(){
+
+    document
+    .getElementById("letterModal")
+    .classList
+    .add("hidden");
+
+
+    document
+    .getElementById("story")
+    .classList
+    .remove("hidden");
+
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("plans")
+        .classList
+        .remove("hidden");
+
+    },500);
+
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("reasons")
+        .classList
+        .remove("hidden");
+
+    },1000);
+
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("final")
+        .classList
+        .remove("hidden");
+
+    },1500);
+
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("story")
+        .scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    },100);
+
+}
+
+
+/* =====================================
+   BUNGA
+===================================== */
+
+const icons = [
+
+    "🌸",
+    "🌷",
+    "🌺",
+    "🌻",
+    "💐",
+    "🦋",
+    "💗",
+    "🌼"
+
+];
+
+
+const field =
+document.getElementById("flowers");
+
+
+for(
+    let i=0;
+    i<42;
+    i++
+){
+
+    const flower =
+    document.createElement("span");
+
+
+    flower.className =
+    "flower";
+
+
+    flower.textContent =
+    icons[
+        Math.floor(
+            Math.random()*icons.length
+        )
+    ];
+
+
+    flower.style.left =
+    Math.random()*100+"%";
+
+
+    flower.style.top =
+    (-10-Math.random()*100)+"px";
+
+
+    flower.style.fontSize =
+    (12+Math.random()*15)+"px";
+
+
+    flower.style.animationDuration =
+    (7+Math.random()*10)+"s";
+
+
+    flower.style.animationDelay =
+    (-Math.random()*14)+"s";
+
+
+    field.appendChild(flower);
+
+}
+
+</script>
+
+
+</body>
+
+</html>

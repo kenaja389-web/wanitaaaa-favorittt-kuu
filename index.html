@@ -1017,6 +1017,23 @@ button{
 
 }
 
+
+/* FOTO LANGSUNG DARI PERANGKAT */
+.photo-upload-box{max-width:900px;margin:0 auto 30px;padding:28px;text-align:center}
+.photo-upload-box h3{margin:0 0 8px;font:600 30px "Great Vibes";color:#704027}
+.photo-upload-box p{margin:0 0 20px;font-size:18px}
+.upload-btn,.clear-btn{display:inline-block;border:1px solid #a77a4e;border-radius:7px;padding:11px 22px;margin:4px;cursor:pointer;transition:.25s;font-family:Inter,sans-serif;font-size:14px}
+.upload-btn{background:#c89d6b;color:white}
+.clear-btn{background:#fffaf7;color:#704027}
+.upload-btn:hover,.clear-btn:hover{transform:translateY(-2px)}
+.photo-status{margin-top:15px;font:14px Inter,sans-serif;color:#8c6b58}
+.empty-photo{min-height:260px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.empty-content{width:100%;text-align:center;font-size:42px;color:#b58a5c;opacity:.65}
+.empty-content small{font:14px Inter,sans-serif}
+.photo.has-image{padding-bottom:10px}
+.photo.has-image img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.photo .remove-photo{position:absolute;left:8px;bottom:7px;border:0;border-radius:20px;padding:6px 10px;background:#704027;color:white;font:12px Inter,sans-serif;cursor:pointer;z-index:3}
+
 </style>
 
 </head>
@@ -1425,96 +1442,27 @@ button{
     </div>
 
 
-    <div class="gallery">
+    <div class="photo-upload-box paper">
+        <h3>📸 Masukkan Foto Avika</h3>
+        <p>Pilih sampai 8 foto dari komputer/HP kamu. Foto langsung muncul di galeri.</p>
 
+        <label class="upload-btn" for="photoPicker">📷 Pilih Foto</label>
+        <input id="photoPicker" type="file" accept="image/*" multiple hidden>
 
-        <div class="photo">
+        <button class="clear-btn" type="button" onclick="clearPhotos()">🗑️ Hapus Semua Foto</button>
 
-            <span class="crown">
-                ♛
-            </span>
+        <div id="photoStatus" class="photo-status">Belum ada foto yang dipilih.</div>
+    </div>
 
-            <img src="assets/photo1.jpg">
-
-        </div>
-
-
-        <div class="photo">
-
-            <span class="crown">
-                ♛
-            </span>
-
-            <img src="assets/photo2.jpg">
-
-        </div>
-
-
-        <div class="photo">
-
-            <span class="crown">
-                ♛
-            </span>
-
-            <img src="assets/photo3.jpg">
-
-        </div>
-
-
-        <div class="photo">
-
-            <span class="crown">
-                ♛
-            </span>
-
-            <img src="assets/photo4.jpg">
-
-        </div>
-
-
-        <div class="photo">
-
-            <span class="crown">
-                ♛
-            </span>
-
-            <img src="assets/photo5.jpg">
-
-        </div>
-
-
-        <div class="photo">
-
-            <span class="crown">
-                ♛
-            </span>
-
-            <img src="assets/photo6.jpg">
-
-        </div>
-
-
-        <div class="photo">
-
-            <span class="crown">
-                ♛
-            </span>
-
-            <img src="assets/photo7.jpg">
-
-        </div>
-
-
-        <div class="photo">
-
-            <span class="crown">
-                ♛
-            </span>
-
-            <img src="assets/photo8.jpg">
-
-        </div>
-
+    <div class="gallery" id="gallery">
+        <div class="photo empty-photo" data-slot="0"><span class="crown">♛</span><div class="empty-content">📷<br><small>Foto 1</small></div></div>
+        <div class="photo empty-photo" data-slot="1"><span class="crown">♛</span><div class="empty-content">📷<br><small>Foto 2</small></div></div>
+        <div class="photo empty-photo" data-slot="2"><span class="crown">♛</span><div class="empty-content">📷<br><small>Foto 3</small></div></div>
+        <div class="photo empty-photo" data-slot="3"><span class="crown">♛</span><div class="empty-content">📷<br><small>Foto 4</small></div></div>
+        <div class="photo empty-photo" data-slot="4"><span class="crown">♛</span><div class="empty-content">📷<br><small>Foto 5</small></div></div>
+        <div class="photo empty-photo" data-slot="5"><span class="crown">♛</span><div class="empty-content">📷<br><small>Foto 6</small></div></div>
+        <div class="photo empty-photo" data-slot="6"><span class="crown">♛</span><div class="empty-content">📷<br><small>Foto 7</small></div></div>
+        <div class="photo empty-photo" data-slot="7"><span class="crown">♛</span><div class="empty-content">📷<br><small>Foto 8</small></div></div>
     </div>
 
 </section>
@@ -2171,6 +2119,57 @@ for(
 
     field.appendChild(flower);
 
+}
+
+
+/* FOTO LANGSUNG DARI PERANGKAT */
+const photoPicker=document.getElementById("photoPicker");
+const gallery=document.getElementById("gallery");
+const photoStatus=document.getElementById("photoStatus");
+
+photoPicker.addEventListener("change",function(){
+    const files=Array.from(this.files).filter(file=>file.type.startsWith("image/")).slice(0,8);
+
+    gallery.querySelectorAll(".photo").forEach((card,index)=>resetPhotoCard(card,index));
+
+    files.forEach((file,index)=>{
+        const reader=new FileReader();
+        reader.onload=function(e){
+            const card=gallery.querySelector(`.photo[data-slot="${index}"]`);
+            if(!card)return;
+            card.className="photo has-image";
+            card.innerHTML=`
+                <span class="crown">♛</span>
+                <img src="${e.target.result}" alt="Foto Avika ${index+1}">
+                <button class="remove-photo" type="button" onclick="removePhoto(${index})">Hapus</button>
+            `;
+        };
+        reader.readAsDataURL(file);
+    });
+
+    photoStatus.textContent=files.length
+        ? `${files.length} foto berhasil dimasukkan ke galeri.`
+        : "Belum ada foto yang dipilih.";
+
+    if(this.files.length>8)photoStatus.textContent+=" Maksimal 8 foto.";
+});
+
+function resetPhotoCard(card,index){
+    card.className="photo empty-photo";
+    card.innerHTML=`<span class="crown">♛</span><div class="empty-content">📷<br><small>Foto ${index+1}</small></div>`;
+}
+
+function removePhoto(index){
+    const card=gallery.querySelector(`.photo[data-slot="${index}"]`);
+    if(card)resetPhotoCard(card,index);
+    const active=gallery.querySelectorAll(".has-image").length;
+    photoStatus.textContent=active?`${active} foto masih tampil di galeri.`:"Belum ada foto yang dipilih.";
+}
+
+function clearPhotos(){
+    gallery.querySelectorAll(".photo").forEach((card,index)=>resetPhotoCard(card,index));
+    photoPicker.value="";
+    photoStatus.textContent="Semua foto sudah dihapus.";
 }
 
 </script>
